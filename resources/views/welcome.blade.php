@@ -197,7 +197,8 @@
             gap: 32px;
         }
 
-        .nav-menu a {
+        /* ─── Hanya link biasa yang dapat underline ─── */
+        .nav-menu a:not(.btn-login):not(.btn-register) {
             text-decoration: none;
             color: var(--dark);
             font-size: 15px;
@@ -206,7 +207,7 @@
             transition: color 0.3s;
         }
 
-        .nav-menu a::after {
+        .nav-menu a:not(.btn-login):not(.btn-register)::after {
             content: '';
             position: absolute;
             bottom: -4px;
@@ -218,13 +219,14 @@
             transition: width 0.3s ease;
         }
 
-        .nav-menu a:hover {
+        .nav-menu a:not(.btn-login):not(.btn-register):hover {
             color: var(--rose);
         }
-        .nav-menu a:hover::after {
+        .nav-menu a:not(.btn-login):not(.btn-register):hover::after {
             width: 100%;
         }
 
+        /* ─── Tombol Login & Register (tanpa underline) ─── */
         .nav-menu .btn-login,
         .nav-menu .btn-register {
             padding: 10px 24px;
@@ -232,6 +234,19 @@
             font-weight: 600;
             font-size: 14px;
             transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none; /* hilangkan underline bawaan link */
+        }
+
+        /* Pastikan pseudo-elemen tidak muncul */
+        .nav-menu .btn-login::after,
+        .nav-menu .btn-register::after {
+            display: none !important;
+            content: none !important;
+            width: 0 !important;
+            height: 0 !important;
         }
 
         .nav-menu .btn-login {
@@ -271,7 +286,6 @@
             background: linear-gradient(145deg, #fff8fa 0%, #fdf0f4 100%);
         }
 
-        /* Decorative circles */
         .hero::before {
             content: '';
             position: absolute;
@@ -393,7 +407,6 @@
             transform: translateY(-4px);
         }
 
-        /* Hero Image */
         .hero-image {
             position: relative;
             z-index: 2;
@@ -429,7 +442,6 @@
             animation: spinSlow 60s linear infinite reverse;
         }
 
-        /* floating flowers */
         .float-icon {
             position: absolute;
             font-size: 36px;

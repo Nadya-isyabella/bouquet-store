@@ -9,32 +9,31 @@ use Illuminate\Support\Facades\Auth;
 
 class BouquetController extends Controller
 {
-    /**
-     * =====================================================
-     * STATUS BOUQUET USER
-     * =====================================================
-     */
+    /*
+    |--------------------------------------------------------------------------
+    | HALAMAN STATUS BOUQUET
+    |--------------------------------------------------------------------------
+    */
+
     public function index()
     {
+        /*
+         * Ambil user yang sedang login.
+         */
         $user = Auth::user();
 
         /*
-        |--------------------------------------------------------------------------
-        | CARI CUSTOMER BERDASARKAN EMAIL USER LOGIN
-        |--------------------------------------------------------------------------
-        */
-
+         * Cari customer berdasarkan email user.
+         */
         $customer = Customer::where(
             'email',
             $user->email
         )->first();
 
         /*
-        |--------------------------------------------------------------------------
-        | JIKA CUSTOMER BELUM ADA
-        |--------------------------------------------------------------------------
-        */
-
+         * Jika customer tidak ditemukan,
+         * tampilkan data kosong.
+         */
         if (!$customer) {
 
             $pemesanans = collect();
@@ -42,15 +41,12 @@ class BouquetController extends Controller
         } else {
 
             /*
-            |--------------------------------------------------------------------------
-            | AMBIL PESANAN YANG BELUM SELESAI
-            |--------------------------------------------------------------------------
-            |
-            | Pesanan dengan status "selesai" tidak akan ditampilkan
-            | lagi di Status Bouquet karena sudah masuk ke Riwayat.
-            |
-            */
-
+             * Ambil semua pesanan milik customer
+             * yang belum selesai.
+             *
+             * Pesanan dengan status selesai
+             * akan masuk ke halaman Riwayat.
+             */
             $pemesanans = Pemesanan::where(
                 'customer_id',
                 $customer->id
@@ -73,11 +69,8 @@ class BouquetController extends Controller
         }
 
         /*
-        |--------------------------------------------------------------------------
-        | KIRIM DATA KE VIEW
-        |--------------------------------------------------------------------------
-        */
-
+         * Kirim data pesanan ke halaman Status Bouquet.
+         */
         return view(
             'user.bouquet.index',
             compact('pemesanans')

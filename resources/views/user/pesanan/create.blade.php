@@ -324,7 +324,7 @@
                             </label>
 
                             <input type="date"
-                                   name="tanggal_pengembalian"
+                                   name="tanggal_pengambilan"
                                    class="form-control"
                                    value="{{ old('tanggal_pengembalian') }}"
                                    required>
@@ -631,7 +631,7 @@
 
                             <span class="badge"
                                   id="cartCount"
-                                  style="background:#d4758a;">
+                               
 
                                 0
 

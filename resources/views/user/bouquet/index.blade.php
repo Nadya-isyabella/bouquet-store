@@ -7,7 +7,6 @@
 @section('content')
 
 <style>
-
     /* =====================================================
        HALAMAN UTAMA
     ====================================================== */
@@ -39,7 +38,6 @@
         font-size: 14px;
     }
 
-
     /* =====================================================
        CARD PESANAN
     ====================================================== */
@@ -56,11 +54,8 @@
         display: flex;
         align-items: center;
         gap: 10px;
-
         padding: 20px 25px;
-
         background: #faf5f5;
-
         border-bottom: 1px solid #eee5e5;
     }
 
@@ -71,13 +66,10 @@
 
     .bouquet-card-header h5 {
         margin: 0;
-
         color: #6b4c4c;
-
         font-size: 18px;
         font-weight: 700;
     }
-
 
     /* =====================================================
        ISI PESANAN
@@ -89,17 +81,11 @@
 
     .order-item {
         display: flex;
-
         align-items: center;
-
         justify-content: space-between;
-
         gap: 40px;
-
         padding: 25px;
-
         border-bottom: 1px solid #f1ebeb;
-
         transition: background 0.2s ease;
     }
 
@@ -111,22 +97,18 @@
         background: #fffafa;
     }
 
-
     /* =====================================================
        BAGIAN KIRI
     ====================================================== */
 
     .order-left {
         flex: 1;
-
         min-width: 0;
     }
 
     .order-info {
         display: flex;
-
         align-items: center;
-
         gap: 45px;
     }
 
@@ -136,30 +118,22 @@
 
     .date-label {
         display: block;
-
         margin-bottom: 6px;
-
         color: #a58d8d;
-
         font-size: 12px;
-
         font-weight: 500;
     }
 
     .date-value {
         color: #6b4c4c;
-
         font-size: 15px;
-
         font-weight: 600;
     }
 
     .date-value i {
         color: #d4758a;
-
         margin-right: 6px;
     }
-
 
     /* =====================================================
        BAGIAN KANAN
@@ -167,46 +141,34 @@
 
     .order-right {
         display: flex;
-
         align-items: center;
-
         gap: 35px;
-
         flex-shrink: 0;
     }
 
     .order-price-box {
         min-width: 160px;
-
         text-align: right;
     }
 
     .price-label {
         display: block;
-
         margin-bottom: 5px;
-
         color: #a58d8d;
-
         font-size: 12px;
     }
 
     .order-price {
         color: #d4758a;
-
         font-size: 18px;
-
         font-weight: 700;
-
         white-space: nowrap;
     }
 
     .order-status {
         min-width: 170px;
-
         text-align: center;
     }
-
 
     /* =====================================================
        STATUS
@@ -214,64 +176,47 @@
 
     .status-label {
         display: block;
-
         margin-bottom: 5px;
-
         color: #a58d8d;
-
         font-size: 12px;
     }
 
     .status-badge {
         display: inline-flex;
-
         align-items: center;
-
         justify-content: center;
-
         gap: 6px;
-
         padding: 8px 16px;
-
         border-radius: 25px;
-
         font-size: 12px;
-
         font-weight: 600;
-
         white-space: nowrap;
     }
 
     .status-pending {
         background: #fff3cd;
-
         color: #856404;
     }
 
     .status-diproses {
         background: #cff4fc;
-
         color: #087990;
     }
 
     .status-selesai {
         background: #d1e7dd;
-
         color: #0f5132;
     }
 
     .status-batal {
         background: #f8d7da;
-
         color: #842029;
     }
 
     .status-default {
         background: #e9ecef;
-
         color: #495057;
     }
-
 
     /* =====================================================
        EMPTY
@@ -279,45 +224,34 @@
 
     .bouquet-empty {
         padding: 70px 20px;
-
         text-align: center;
     }
 
     .bouquet-empty i {
         display: block;
-
         margin-bottom: 15px;
-
         color: #d4b8b8;
-
         font-size: 48px;
     }
 
     .bouquet-empty h5 {
         margin-bottom: 7px;
-
         color: #6b4c4c;
-
         font-size: 17px;
-
         font-weight: 700;
     }
 
     .bouquet-empty p {
         margin: 0;
-
         color: #999;
-
         font-size: 13px;
     }
-
 
     /* =====================================================
        RESPONSIVE TABLET
     ====================================================== */
 
     @media (max-width: 992px) {
-
         .order-item {
             gap: 25px;
         }
@@ -341,16 +275,13 @@
         .order-status {
             min-width: 150px;
         }
-
     }
-
 
     /* =====================================================
        RESPONSIVE HP
     ====================================================== */
 
     @media (max-width: 768px) {
-
         .bouquet-title {
             font-size: 23px;
         }
@@ -360,15 +291,10 @@
         }
 
         .order-item {
-
             align-items: flex-start;
-
             flex-direction: column;
-
             gap: 20px;
-
             padding: 22px 20px;
-
         }
 
         .order-left {
@@ -376,13 +302,9 @@
         }
 
         .order-info {
-
             width: 100%;
-
             gap: 20px;
-
             flex-wrap: wrap;
-
         }
 
         .date-info {
@@ -390,36 +312,27 @@
         }
 
         .order-right {
-
             width: 100%;
-
             justify-content: space-between;
-
             gap: 15px;
-
         }
 
         .order-price-box {
             min-width: auto;
-
             text-align: left;
         }
 
         .order-status {
             min-width: auto;
-
             text-align: right;
         }
-
     }
-
 
     /* =====================================================
        RESPONSIVE HP KECIL
     ====================================================== */
 
     @media (max-width: 480px) {
-
         .bouquet-title {
             font-size: 21px;
         }
@@ -429,13 +342,9 @@
         }
 
         .order-info {
-
             flex-direction: column;
-
             align-items: flex-start;
-
             gap: 15px;
-
         }
 
         .date-info {
@@ -443,69 +352,45 @@
         }
 
         .order-right {
-
             align-items: flex-start;
-
             flex-direction: column;
-
             width: 100%;
-
         }
 
         .order-price-box {
-
             width: 100%;
-
             text-align: left;
-
         }
 
         .order-status {
-
             width: 100%;
-
             text-align: left;
-
         }
-
     }
-
 </style>
 
 
 <div class="bouquet-page">
 
-    {{-- =====================================================
-        HEADER
-    ====================================================== --}}
-
+    {{-- HEADER --}}
     <div class="bouquet-header">
 
         <h2 class="bouquet-title">
-
             <i class="bi bi-flower1"></i>
-
             Status Bouquet
-
         </h2>
 
         <p class="bouquet-description">
-
             Lihat perkembangan pesanan bouquet kamu.
-
         </p>
 
     </div>
 
 
-    {{-- =====================================================
-        CARD PESANAN
-    ====================================================== --}}
-
+    {{-- CARD PESANAN --}}
     <div class="bouquet-card">
 
         {{-- HEADER CARD --}}
-
         <div class="bouquet-card-header">
 
             <i class="bi bi-receipt"></i>
@@ -518,25 +403,21 @@
 
 
         {{-- BODY --}}
-
         <div class="bouquet-body">
 
             @forelse ($pemesanans as $pemesanan)
 
-                <div class="order-item">
+                <div
+                    class="order-item"
+                    data-order-id="{{ $pemesanan->id }}"
+                >
 
-
-                    {{-- =================================================
-                        INFORMASI TANGGAL
-                    ================================================== --}}
-
+                    {{-- INFORMASI TANGGAL --}}
                     <div class="order-left">
 
                         <div class="order-info">
 
-
                             {{-- TANGGAL PEMESANAN --}}
-
                             <div class="date-info">
 
                                 <span class="date-label">
@@ -565,7 +446,6 @@
 
 
                             {{-- TANGGAL PENGAMBILAN --}}
-
                             <div class="date-info">
 
                                 <span class="date-label">
@@ -592,21 +472,15 @@
 
                             </div>
 
-
                         </div>
 
                     </div>
 
 
-                    {{-- =================================================
-                        HARGA + STATUS
-                    ================================================== --}}
-
+                    {{-- HARGA + STATUS --}}
                     <div class="order-right">
 
-
                         {{-- TOTAL HARGA --}}
-
                         <div class="order-price-box">
 
                             <span class="price-label">
@@ -629,7 +503,6 @@
 
 
                         {{-- STATUS --}}
-
                         <div class="order-status">
 
                             <span class="status-label">
@@ -637,7 +510,10 @@
                             </span>
 
 
-                            @if ($pemesanan->status === 'pending')
+                            @if (
+                                $pemesanan->status === 'pending' ||
+                                $pemesanan->status === 'baru'
+                            )
 
                                 <span class="status-badge status-pending">
 
@@ -699,14 +575,9 @@
 
                 </div>
 
-
             @empty
 
-
-                {{-- =================================================
-                    BELUM ADA PESANAN
-                ================================================== --}}
-
+                {{-- BELUM ADA PESANAN --}}
                 <div class="bouquet-empty">
 
                     <i class="bi bi-flower1"></i>
@@ -720,7 +591,6 @@
                     </p>
 
                 </div>
-
 
             @endforelse
 

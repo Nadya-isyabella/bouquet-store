@@ -186,8 +186,9 @@ Route::prefix('user')
             '/bouquet',
             [BouquetController::class, 'index']
         )->name('bouquet.index');
+        
 
-
+        
         /*
         |--------------------------------------------------------------------------
         | PEMBAYARAN USER

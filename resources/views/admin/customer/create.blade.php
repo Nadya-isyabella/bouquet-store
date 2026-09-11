@@ -1,7 +1,7 @@
 ```blade
 @extends('layouts.main')
 
-@section('title', 'Tambah Customer')
+@section('title', )
 
 @section('content')
 

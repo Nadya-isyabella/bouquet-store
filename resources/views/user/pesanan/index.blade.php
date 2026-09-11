@@ -407,36 +407,7 @@
        TOMBOL KEMBALI
     ========================================================= */
 
-    .btn-kembali {
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-
-        padding: 8px 15px;
-
-        background: #fff;
-        border: 1px solid #dfcaca;
-        border-radius: 7px;
-
-        color: #6b4c4c;
-        text-decoration: none;
-
-        font-size: 13px;
-        font-weight: 400;
-
-        transition: .2s;
-    }
-
-    .btn-kembali i {
-        color: #d4758a;
-        font-size: 14px;
-    }
-
-    .btn-kembali:hover {
-        background: #faf1f3;
-        border-color: #d4758a;
-        color: #6b4c4c;
-    }
+    
 
 
     /* =========================================================
@@ -568,19 +539,7 @@
             Isi data customer dan pilih produk yang dipesan.
         </div>
 
-    </div>
 
-
-    <a href="{{ route('user.pesanan.index') }}"
-       class="btn-kembali">
-
-        <i class="bi bi-arrow-left"></i>
-
-        Kembali
-
-    </a>
-
-</div>
 
 
 {{-- =========================================================
@@ -647,8 +606,9 @@
                     <input type="text"
                            name="nama_customer"
                            class="data-input"
-                           value="{{ old('nama_customer') }}"
+                           value="{{ old('nama_customer', auth()->user()->name) }}"
                            placeholder="Masukkan nama customer"
+                           readonly
                            required>
 
                 </div>
@@ -666,8 +626,9 @@
                     <input type="email"
                            name="email"
                            class="data-input"
-                           value="{{ old('email') }}"
+                           value="{{ old('email', auth()->user()->email) }}"
                            placeholder="Masukkan email customer"
+                           readonly
                            required>
 
                     <small class="data-help">
@@ -1029,7 +990,7 @@
 
                 <span class="badge ms-1"
                       id="cartCount"
-                      style="background:#d4758a;">
+                    
 
                     0
 
