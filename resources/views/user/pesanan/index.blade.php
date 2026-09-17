@@ -662,7 +662,7 @@
                 <div class="data-row">
 
                     <label class="data-label">
-                        Alamat Pengiriman
+                        Alamat
                         <span class="required">*</span>
                     </label>
 
