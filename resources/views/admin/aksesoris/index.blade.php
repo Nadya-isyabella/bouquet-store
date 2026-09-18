@@ -124,66 +124,89 @@
     </div>
 
     {{-- Daftar Aksesoris --}}
-    <div class="row">
-        @forelse($aksesoris as $item)
-            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                <div class="card h-100 shadow-sm">
-                    {{-- Gambar --}}
-                    @if($item->gambar)
-                        <img src="{{ asset('storage/' . $item->gambar) }}"
-                             class="card-img-top"
-                             style="height: 220px; object-fit: cover;">
-                    @else
-                        <div class="d-flex align-items-center justify-content-center bg-light"
-                             style="height: 220px;">
-                            <i class="bi bi-image fs-1 text-secondary"></i>
-                        </div>
-                    @endif
+   <div class="row">
+    @forelse($aksesoris as $item)
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
 
-                    {{-- Isi Card --}}
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">{{ $item->nama }}</h5>
-                        <p class="mb-2 text-primary fw-bold">
-                            Rp {{ number_format($item->harga, 0, ',', '.') }}
-                        </p>
-                        <p class="mb-3">
-                            <span class="badge text-bg-secondary">
-                                Stok: {{ $item->stok }}
-                            </span>
-                        </p>
+                {{-- Gambar --}}
+                @if($item->gambar)
+                   <img src="{{ asset('storage/' . $item->gambar) }}"
+                    class="card-img-top"
+                    width="400"
+                    height="220"
+                    alt="{{ $item->nama }}"
+                    loading="{{ $loop->first ? 'eager' : 'lazy' }}"
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    @if($loop->first) fetchpriority="high" @endif
+                    style="height: 220px; object-fit: cover;">
+                @else
+                    <div class="d-flex align-items-center justify-content-center bg-light"
+                         style="height: 220px;">
+                        <i class="bi bi-image fs-1 text-secondary"></i>
+                    </div>
+                @endif
 
-                        {{-- Tombol --}}
-                        <div class="d-flex gap-2">
-                            <a href="{{ route('admin.aksesoris.edit', $item->id) }}"
-                               class="btn btn-warning btn-sm flex-fill">
-                                <i class="bi bi-pencil"></i> Edit
-                            </a>
-                            <form action="{{ route('admin.aksesoris.destroy', $item->id) }}"
-                                  method="POST"
-                                  class="flex-fill"
-                                  onsubmit="return confirm('Yakin ingin menghapus aksesoris ini?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm w-100">
-                                    <i class="bi bi-trash"></i> Hapus
-                                </button>
-                            </form>
-                        </div>
+                {{-- Isi Card --}}
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">
+                        {{ $item->nama }}
+                    </h5>
+
+                    <p class="mb-2 text-primary fw-bold">
+                        Rp {{ number_format($item->harga, 0, ',', '.') }}
+                    </p>
+
+                    <p class="mb-3">
+                        <span class="badge text-bg-secondary">
+                            Stok: {{ $item->stok }}
+                        </span>
+                    </p>
+
+                    {{-- Tombol --}}
+                    <div class="d-flex gap-2">
+                        <a href="{{ route('admin.aksesoris.edit', $item->id) }}"
+                           class="btn btn-warning btn-sm flex-fill">
+                            <i class="bi bi-pencil"></i> Edit
+                        </a>
+
+                        <form action="{{ route('admin.aksesoris.destroy', $item->id) }}"
+                              method="POST"
+                              class="flex-fill"
+                              onsubmit="return confirm('Yakin ingin menghapus aksesoris ini?')">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit"
+                                    class="btn btn-danger btn-sm w-100">
+                                <i class="bi bi-trash"></i> Hapus
+                            </button>
+                        </form>
                     </div>
                 </div>
+
             </div>
-        @empty
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body text-center py-5">
-                        <i class="bi bi-gift fs-1 text-secondary"></i>
-                        <h5 class="mt-3">Belum ada aksesoris</h5>
-                        <p class="text-secondary">Silakan tambahkan aksesoris terlebih dahulu.</p>
-                    </div>
+        </div>
+
+    @empty
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center py-5">
+                    <i class="bi bi-gift fs-1 text-secondary"></i>
+
+                    <h5 class="mt-3">
+                        Belum ada aksesoris
+                    </h5>
+
+                    <p class="text-secondary">
+                        Silakan tambahkan aksesoris terlebih dahulu.
+                    </p>
                 </div>
             </div>
-        @endforelse
-    </div>
+        </div>
+    @endforelse
+</div>
 
 </div>
 

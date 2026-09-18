@@ -14,12 +14,49 @@
     </title>
 
     <!-- =====================================================
-         BOOTSTRAP ICONS
+         OPTIMASI 1: PRECONNECT KE CDN
+         Mempercepat koneksi ke server CDN JSDelivr
+    ====================================================== -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- =====================================================
+         OPTIMASI 2: FONT DISPLAY SWAP
+         Mencegah teks tidak terlihat (FOIT) saat font icon dimuat.
+         Kita deklarasikan ulang @font-face dengan font-display: swap.
+    ====================================================== -->
+    <style>
+        @font-face {
+            font-family: "bootstrap-icons";
+            src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6") format("woff2"),
+                 url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("woff");
+            font-display: swap;
+        }
+    </style>
+
+    <!-- =====================================================
+         OPTIMASI 3: RENDER-BLOCKING REQUESTS
+         Memuat CSS Bootstrap Icons secara asinkron (non-blocking)
+         menggunakan trik media="print" onload.
     ====================================================== -->
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        media="print"
+        onload="this.media='all'"
     >
+    <noscript>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        >
+    </noscript>
+
+    <!-- =====================================================
+         OPTIMASI 4: STACK UNTUK PRELOAD LCP
+         Ini wajib ada agar @push('head') dari file konten
+         (preload gambar LCP) bisa dirender di sini.
+    ====================================================== -->
+    @stack('head')
 
     <style>
 
@@ -649,6 +686,10 @@
 
     <!-- =====================================================
          DATA PEMESANAN TERBARU USER
+         CATATAN PERFORMA SERVER: 
+         Query database di dalam view ini akan dieksekusi setiap 
+         kali halaman dimuat. Untuk performa server yang lebih baik,
+         pindahkan logika ini ke View Composer atau Controller.
     ====================================================== -->
 
     @php

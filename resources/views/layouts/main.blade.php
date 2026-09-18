@@ -12,52 +12,46 @@
         @yield('title') - Bouquet Store
     </title>
 
+    {{-- ===================================================== --}}
+    {{-- PRECONNECT CDN --}}
+    {{-- ===================================================== --}}
+    <link rel="preconnect"
+          href="https://cdn.jsdelivr.net"
+          crossorigin>
 
     {{-- ===================================================== --}}
     {{-- ADMINLTE 4 --}}
     {{-- ===================================================== --}}
-
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/admin-lte@4.0.0/dist/css/adminlte.min.css">
-
-
-    {{-- ===================================================== --}}
-    {{-- BOOTSTRAP 5 --}}
-    {{-- ===================================================== --}}
-
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-
 
     {{-- ===================================================== --}}
     {{-- BOOTSTRAP ICONS --}}
     {{-- ===================================================== --}}
-
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
+    {{-- ===================================================== --}}
+    {{-- HEAD TAMBAHAN DARI HALAMAN --}}
+    {{-- ===================================================== --}}
+    @stack('head')
 
     {{-- ===================================================== --}}
     {{-- STYLE --}}
     {{-- ===================================================== --}}
-
     <style>
 
         * {
             box-sizing: border-box;
         }
 
-
         body {
-
             background: #f9f2f2 !important;
-
             font-family:
                 'Segoe UI',
                 Roboto,
                 Arial,
                 sans-serif;
-
         }
 
 
@@ -66,51 +60,28 @@
         ===================================================== */
 
         .app-header.navbar {
-
             background: #ffffff !important;
-
-            border-bottom:
-                3px solid #f5d1d1;
-
-            box-shadow:
-                0 2px 12px rgba(200,150,150,0.08);
-
+            border-bottom: 3px solid #f5d1d1;
+            box-shadow: 0 2px 12px rgba(200,150,150,0.08);
         }
-
 
         .app-header .nav-link {
-
             color: #6b4c4c !important;
-
             font-weight: 500;
-
         }
-
 
         .app-header .nav-link:hover {
-
             color: #d4758a !important;
-
         }
-
 
         .app-header .nav-link i {
-
             font-size: 1.3rem;
-
         }
 
-
-        .app-header
-        .nav-link
-        .bi-person-circle {
-
+        .app-header .nav-link .bi-person-circle {
             color: #d4758a;
-
             margin-right: 5px;
-
         }
-
 
 
         /* =====================================================
@@ -118,7 +89,6 @@
         ===================================================== */
 
         .app-sidebar {
-
             background:
                 linear-gradient(
                     180deg,
@@ -130,9 +100,7 @@
 
             box-shadow:
                 4px 0 20px rgba(0,0,0,0.25);
-
         }
-
 
 
         /* =====================================================
@@ -140,56 +108,36 @@
         ===================================================== */
 
         .app-sidebar .sidebar-brand {
-
-            padding:
-                1.2rem 1rem;
+            padding: 1.2rem 1rem;
 
             border-bottom:
                 2px solid rgba(255,255,255,0.15);
 
             background:
                 rgba(255,255,255,0.05);
-
         }
-
 
         .app-sidebar .brand-link {
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             text-decoration: none;
-
         }
 
-
         .app-sidebar .brand-text {
-
             color: #ffffff !important;
-
             font-size: 1.5rem;
-
             font-weight: 800;
-
             letter-spacing: 1.5px;
 
             text-shadow:
                 0 2px 8px rgba(0,0,0,0.5);
-
         }
-
 
         .app-sidebar .brand-text::before {
-
             content: "🌸 ";
-
             font-size: 1.7rem;
-
         }
-
 
 
         /* =====================================================
@@ -197,20 +145,13 @@
         ===================================================== */
 
         .sidebar-menu {
-
             padding-top: 8px;
-
         }
 
-
-        .sidebar-menu
-        .nav-item
-        .nav-link {
-
+        .sidebar-menu .nav-item .nav-link {
             color: #ffffff !important;
 
             display: flex;
-
             align-items: center;
 
             min-height: 48px;
@@ -228,35 +169,23 @@
             transition:
                 background 0.25s,
                 transform 0.15s;
-
         }
 
-
-        .sidebar-menu
-        .nav-item
-        .nav-link:hover {
-
+        .sidebar-menu .nav-item .nav-link:hover {
             background:
                 rgba(255,255,255,0.15) !important;
 
             transform:
                 translateX(4px);
-
         }
 
-
-        .sidebar-menu
-        .nav-item
-        .nav-link.active {
-
+        .sidebar-menu .nav-item .nav-link.active {
             background:
                 rgba(212,117,138,0.35) !important;
 
             box-shadow:
                 inset 4px 0 0 #d4758a;
-
         }
-
 
 
         /* =====================================================
@@ -267,17 +196,12 @@
         .nav-item
         .nav-link
         .nav-icon {
-
             width: 28px;
-
             min-width: 28px;
-
             height: 28px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             margin-right: 12px;
@@ -285,17 +209,13 @@
             color: #f5d1d1 !important;
 
             font-size: 1.2rem;
-
         }
-
 
         .sidebar-menu
         .nav-item
         .nav-link:hover
         .nav-icon {
-
             color: #ffffff !important;
-
         }
 
 
@@ -304,13 +224,10 @@
         ===================================================== */
 
         .sidebar-svg {
-
             width: 22px;
-
             height: 22px;
 
-            stroke:
-                currentColor;
+            stroke: currentColor;
 
             fill: none;
 
@@ -319,9 +236,7 @@
             stroke-linecap: round;
 
             stroke-linejoin: round;
-
         }
-
 
 
         /* =====================================================
@@ -331,7 +246,6 @@
         .sidebar-menu
         .nav-item
         .nav-link p {
-
             margin: 0;
 
             color: #ffffff !important;
@@ -339,27 +253,18 @@
             font-weight: 500;
 
             white-space: nowrap;
-
         }
-
 
 
         /* =====================================================
            LOGOUT
         ===================================================== */
 
-        .sidebar-menu
-        form {
-
+        .sidebar-menu form {
             margin: 0;
-
         }
 
-
-        .sidebar-menu
-        form
-        .nav-link {
-
+        .sidebar-menu form .nav-link {
             width: 100%;
 
             border: none;
@@ -367,19 +272,12 @@
             text-align: left;
 
             cursor: pointer;
-
         }
 
-
-        .sidebar-menu
-        form
-        .nav-link:hover {
-
+        .sidebar-menu form .nav-link:hover {
             background:
                 rgba(255,255,255,0.15) !important;
-
         }
-
 
 
         /* =====================================================
@@ -387,69 +285,39 @@
         ===================================================== */
 
         .app-main {
-
-            background:
-                #f9f2f2;
-
+            background: #f9f2f2;
         }
 
-
         .app-content-header {
-
-            background:
-                transparent;
+            background: transparent;
 
             padding:
                 1.5rem 0 0.5rem;
-
         }
-
 
         .app-content-header h3 {
+            color: #6b4c4c;
 
-            color:
-                #6b4c4c;
+            font-weight: 700;
 
-            font-weight:
-                700;
-
-            letter-spacing:
-                0.3px;
-
+            letter-spacing: 0.3px;
         }
-
 
         .app-content-header .breadcrumb {
+            background: transparent;
 
-            background:
-                transparent;
+            padding: 0;
 
-            padding:
-                0;
-
-            margin:
-                0;
-
+            margin: 0;
         }
 
-
-        .app-content-header
-        .breadcrumb-item {
-
-            color:
-                #b59595;
-
+        .app-content-header .breadcrumb-item {
+            color: #b59595;
         }
 
-
-        .app-content-header
-        .breadcrumb-item.active {
-
-            color:
-                #6b4c4c;
-
+        .app-content-header .breadcrumb-item.active {
+            color: #6b4c4c;
         }
-
 
 
         /* =====================================================
@@ -457,12 +325,8 @@
         ===================================================== */
 
         .app-content {
-
-            background:
-                #f9f2f2;
-
+            background: #f9f2f2;
         }
-
 
 
         /* =====================================================
@@ -470,45 +334,30 @@
         ===================================================== */
 
         .app-footer {
-
-            background:
-                #ffffff;
+            background: #ffffff;
 
             border-top:
                 2px solid #f5d1d1;
 
-            color:
-                #6b4c4c;
+            color: #6b4c4c;
 
             padding:
                 0.8rem 1.5rem;
 
-            font-weight:
-                500;
+            font-weight: 500;
 
             box-shadow:
                 0 -2px 10px
                 rgba(200,150,150,0.05);
-
         }
-
 
         .app-footer .float-end {
-
-            color:
-                #b59595;
-
+            color: #b59595;
         }
 
-
-        .app-footer
-        .float-end::before {
-
-            content:
-                "🌿 ";
-
+        .app-footer .float-end::before {
+            content: "🌿 ";
         }
-
 
 
         /* =====================================================
@@ -516,30 +365,21 @@
         ===================================================== */
 
         .sidebar-wrapper::-webkit-scrollbar {
-
             width: 4px;
-
         }
-
 
         .sidebar-wrapper::-webkit-scrollbar-track {
-
             background:
                 rgba(255,255,255,0.05);
-
         }
 
-
         .sidebar-wrapper::-webkit-scrollbar-thumb {
-
             background:
                 #d4758a;
 
             border-radius:
                 10px;
-
         }
-
 
 
         /* =====================================================
@@ -548,22 +388,15 @@
 
         @media (max-width: 768px) {
 
-            .app-sidebar
-            .brand-text {
-
-                font-size:
-                    1.1rem;
-
+            .app-sidebar .brand-text {
+                font-size: 1.1rem;
             }
-
 
             .sidebar-menu
             .nav-item
             .nav-link {
-
                 padding:
                     0.6rem 0.8rem;
-
             }
 
         }
@@ -575,7 +408,6 @@
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
 
-
 <div class="app-wrapper">
 
 
@@ -586,7 +418,6 @@
     <nav class="app-header navbar navbar-expand bg-body">
 
         <div class="container-fluid">
-
 
             {{-- Tombol buka/tutup sidebar --}}
             <ul class="navbar-nav">
@@ -606,7 +437,6 @@
             </ul>
 
 
-
             {{-- Admin --}}
             <ul class="navbar-nav ms-auto">
 
@@ -624,11 +454,9 @@
 
             </ul>
 
-
         </div>
 
     </nav>
-
 
 
     {{-- ===================================================== --}}
@@ -639,10 +467,7 @@
            data-bs-theme="dark">
 
 
-        {{-- ================================================= --}}
         {{-- BRAND --}}
-        {{-- ================================================= --}}
-
         <div class="sidebar-brand">
 
             <a href="{{ route('admin.dashboard') }}"
@@ -657,20 +482,13 @@
         </div>
 
 
-
-        {{-- ================================================= --}}
         {{-- SIDEBAR WRAPPER --}}
-        {{-- ================================================= --}}
-
         <div class="sidebar-wrapper">
-
 
             <nav class="mt-2">
 
-
                 <ul class="nav sidebar-menu flex-column"
                     role="menu">
-
 
 
                     {{-- ================================================= --}}
@@ -693,7 +511,6 @@
                     </li>
 
 
-
                     {{-- ================================================= --}}
                     {{-- DATA CUSTOMER --}}
                     {{-- ================================================= --}}
@@ -714,7 +531,6 @@
                     </li>
 
 
-
                     {{-- ================================================= --}}
                     {{-- PEMESANAN --}}
                     {{-- ================================================= --}}
@@ -724,8 +540,6 @@
                         <a href="{{ route('admin.pemesanan.index') }}"
                            class="nav-link {{ request()->routeIs('admin.pemesanan.*') ? 'active' : '' }}">
 
-
-                            {{-- SVG CART --}}
                             <span class="nav-icon">
 
                                 <svg class="sidebar-svg"
@@ -755,7 +569,6 @@
 
                             </span>
 
-
                             <p>
                                 Pemesanan
                             </p>
@@ -763,7 +576,6 @@
                         </a>
 
                     </li>
-
 
 
                     {{-- ================================================= --}}
@@ -786,7 +598,6 @@
                     </li>
 
 
-
                     {{-- ================================================= --}}
                     {{-- KATEGORI BOUQUET --}}
                     {{-- ================================================= --}}
@@ -805,9 +616,6 @@
                         </a>
 
                     </li>
-
-                    
-
 
 
                     {{-- ================================================= --}}
@@ -830,7 +638,6 @@
                     </li>
 
 
-
                     {{-- ================================================= --}}
                     {{-- RIWAYAT --}}
                     {{-- ================================================= --}}
@@ -849,7 +656,6 @@
                         </a>
 
                     </li>
-
 
 
                     {{-- ================================================= --}}
@@ -885,9 +691,7 @@
 
         </div>
 
-
     </aside>
-
 
 
     {{-- ===================================================== --}}
@@ -904,17 +708,13 @@
 
                 <div class="row">
 
-
                     <div class="col-sm-6">
 
                         <h3 class="mb-0">
-
                             @yield('title')
-
                         </h3>
 
                     </div>
-
 
 
                     <div class="col-sm-6">
@@ -926,22 +726,18 @@
                             </li>
 
                             <li class="breadcrumb-item active">
-
                                 @yield('title')
-
                             </li>
 
                         </ol>
 
                     </div>
 
-
                 </div>
 
             </div>
 
         </div>
-
 
 
         {{-- CONTENT --}}
@@ -955,9 +751,7 @@
 
         </div>
 
-
     </main>
-
 
 
     {{-- ===================================================== --}}
@@ -967,13 +761,8 @@
     <footer class="app-footer">
 
         <div class="float-end d-none d-sm-inline">
-
             Bouquet Store
-
         </div>
-
-
-
 
     </footer>
 
@@ -981,12 +770,14 @@
 </div>
 
 
-
 {{-- ========================================================= --}}
 {{-- ADMINLTE JS --}}
 {{-- ========================================================= --}}
 
-<script src="https://cdn.jsdelivr.net/npm/admin-lte@4.0.0/dist/js/adminlte.min.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/admin-lte@4.0.0/dist/js/adminlte.min.js"
+    defer>
+</script>
 
 
 </body>

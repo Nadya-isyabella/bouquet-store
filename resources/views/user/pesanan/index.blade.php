@@ -196,11 +196,12 @@
     }
 
     .product-image {
-        width: 100%;
-        height: 155px;
-        object-fit: cover;
-        display: block;
-    }
+    width: 100%;
+    height: 155px;
+    aspect-ratio: 300 / 155;
+    object-fit: cover;
+    display: block;
+}
 
     .empty-image {
         width: 100%;
@@ -276,12 +277,13 @@
     }
 
     .cart-image {
-        width: 62px;
-        height: 62px;
-        border-radius: 7px;
-        object-fit: cover;
-        flex-shrink: 0;
-    }
+    width: 62px;
+    height: 62px;
+    aspect-ratio: 1 / 1;
+    border-radius: 7px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
 
     .cart-info {
         flex: 1;
@@ -875,8 +877,13 @@
                             @if($product->gambar)
 
                                 <img src="{{ asset('storage/' . $product->gambar) }}"
-                                     class="product-image"
-                                     alt="{{ $product->nama }}">
+                                         <img src="{{ asset('storage/' . $product->gambar) }}"
+         class="product-image"
+         width="300"
+         height="155"
+         loading="lazy"
+         decoding="async"
+         alt="{{ $product->nama }}">
 
                             @else
 
